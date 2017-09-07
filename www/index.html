@@ -139,7 +139,11 @@
             })
             .done(function( response ) {
                 // window.location.href = "dashboard.html"
+                console.log(response);
                 if(response.status) {
+                    localStorage.setItem("first_name", response.user.first_name);
+                    localStorage.setItem("last_name", response.user.last_name);
+                    localStorage.setItem("user_id", response.user.id);
                     window.location.href = "dashboard.html"
                 } else {
                     alert('Invalid username/password')

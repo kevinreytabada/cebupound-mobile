@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "aaee19d7-31e1-4a6f-a5dc-cbc0e86775ca",
-      "lastModifiedDate": 1504794752159,
+      "lastModifiedDate": 1504797671150,
       "creationDate": 1504614555208
     },
     "sourceDirectory": "www",
@@ -85,7 +85,7 @@
         "isActive_": true,
         "certificateId_": "",
         "cordovaCLIVersion_": "6.2.0",
-        "crosswalkVersion_": "23",
+        "crosswalkVersion_": "shared",
         "appName_": "cebupoundanimal",
         "appID_": "xdk.intel.template",
         "appAccess_": {
