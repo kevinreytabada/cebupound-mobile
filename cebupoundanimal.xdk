@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "aaee19d7-31e1-4a6f-a5dc-cbc0e86775ca",
-      "lastModifiedDate": 1504614609257,
+      "lastModifiedDate": 1504794752159,
       "creationDate": 1504614555208
     },
     "sourceDirectory": "www",
@@ -72,13 +72,13 @@
     "buildConfigurations": {
       "Android": {
         "platform_": "android",
-        "runtime_": "Cordova 3.x",
+        "runtime_": "Crosswalk with Cordova 3.x",
         "name_": "Android",
         "preferences_": {
           "android-minSdkVersion": "19",
           "android-targetSdkVersion": "21",
           "android-installLocation": "auto",
-          "Fullscreen": false,
+          "Fullscreen": true,
           "Orientation": "portrait",
           "android-signed": true
         },
@@ -89,20 +89,11 @@
         "appName_": "cebupoundanimal",
         "appID_": "xdk.intel.template",
         "appAccess_": {
-          "mode": "whitelist",
-          "network": [
-            "*"
-          ],
-          "intents": [
-            "http://*/*",
-            "https://*/*",
-            "tel:*",
-            "sms:*",
-            "mailto:*",
-            "geo:*",
-            "market:*"
-          ],
-          "navigation": []
+          "mode": "block",
+          "network": [],
+          "intents": [],
+          "navigation": [],
+          "properties": {}
         },
         "icons_": [],
         "splashes_": [],
@@ -125,7 +116,7 @@
           "Fullscreen": false,
           "Orientation": "portrait"
         },
-        "isActive_": true,
+        "isActive_": false,
         "certificateId_": "",
         "cordovaCLIVersion_": "6.2.0",
         "crosswalkVersion_": "23",
@@ -168,7 +159,7 @@
           "Fullscreen": false,
           "Orientation": "portrait"
         },
-        "isActive_": true,
+        "isActive_": false,
         "certificateId_": "",
         "cordovaCLIVersion_": "6.2.0",
         "crosswalkVersion_": "23",
