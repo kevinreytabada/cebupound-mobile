@@ -47,7 +47,7 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
+  <link rel="stylesheet" href="css/datatables.css">
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
@@ -118,72 +118,85 @@
   </aside>
 
   <div class="content-wrapper">
-      
+  <section class="content-header">
+  <h1>
+    Pets
+    <small>List</small>
+  </h1>
+<!--   <br>
+    <a href="{{ url('/dashboard/pets/create')}}" class="btn btn-info pull-left">Create</a>
+  <br> -->
+  <ol class="breadcrumb">
+    <li><a href="{{ url('/dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li>Dashboard</li>
+    <li class="active">Pets</li>
+  </ol>
+</section>
+  <!-- Main content -->
     <section class="content">
-    <div class="row">
-          <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-aqua">
-              <div class="inner">
-                <h3>150</h3>
-
-                <p>New Orders</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Pet Form</h3>
             </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-green">
-              <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form>
+                <div class="box-body ">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" name="name" class="form-control" id="name" value="">
+                            </div>
+                            <div class="form-group">
+                            <label for="exampleInputPassword1">Age</label>
+                            <input type="number" name="age"class="form-control" id="age" value="">
+                            </div>
+                            <div class="form-group">
+                            <label>Gender</label>
+                            <select class="form-control" id="gender">
+                                <option value="Male" >Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">
+                                    <img src="http://localhost:8000/images/" width="200">
+                                </label>
+                                <input type="file" id="image">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label >Breed</label>
+                            <input type="text" name="breed" class="form-control" id="breed">
+                            </div>
+                            <div class="form-group">
+                            <label >Color</label>
+                            <input type="text" name="color" class="form-control" id="color">
+                            </div>
+                            <div class="form-group">
+                            <label>Type</label>
+                            <select class="form-control" id="pet_type_id">
+                                <option value="1">Dog</option>
+                                <option value="2">Cat</option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
 
-                <p>Bounce Rate</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-yellow">
-              <div class="inner">
-                <h3>44</h3>
-
-                <p>User Registrations</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-red">
-              <div class="inner">
-                <h3>65</h3>
-
-                <p>Unique Visitors</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
+                <div class="box-footer">
+                    <button type="button" id="submit" class="btn btn-primary pull-right">Submit</button>
+                </div>
+            </form>
         </div>
-      </section> 
-    </div>
+    </section>
+    <!-- /.content -->
+
+  </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer"><center>
     <strong>©2017 Cebu Pound.</strong> All rights
@@ -231,27 +244,69 @@
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
 
+    <script src="js/datatables.js"></script>
+
     <script>
 
       $(document).ready(function () {
+
         $('#submit').click(function (e) {
-            e.preventDefault();
-            $.ajax({
-                method: "POST",
-                url: "http://localhost:8000/mobile/login",
-                data: { 
-                    username: $('#username').val(), 
-                    password: $('#password').val() 
-                }
-            })
-            .done(function( response ) {
-                if(response.status) {
-                  alert('Valid credentials');
-                } else {
-                  alert('Invalid username/password.');
-                }
-            });
+          e.preventDefault();
+          var name = $('#name').val();
+          var age = $('#age').val();
+          var gender = $('#gender').val();
+          var image = $('#image').val();
+          var breed = $('#breed').val();
+          var color = $('#color').val();
+          var pet_type_id = $('#pet_type_id').val();
+
+          $.ajax({
+              method: "POST",
+              url: "http://localhost:8000/mobile/mypets/create",
+              data: { 
+                  name: name, 
+                  age: age,
+                  gender: gender,
+                  image: image,
+                  breed: breed,
+                  color: color,
+                  pet_type_id: pet_type_id,
+                  user_id: localStorage.getItem('user_id')    
+              }
+          })
+          .done(function( response ) {
+            if(response.status)
+            {
+              alert('Pet created...');
+            }else{
+              alert('Unable to create pet...');
+            }
+          });
+
         });
+
+        $.ajax({
+            method: "GET",
+            url: "http://localhost:8000/mobile/mypets/" + localStorage.getItem('user_id'),
+            // data: { 
+            //     username: $('#username').val(), 
+            //     password: $('#password').val() 
+            // }http://localhost:8000/images/IMG_3311.JPG
+        })
+        .done(function( response ) {
+          for (var i = response.length - 1; i >= 0; i--) {
+            $('.pets-data').append(
+                '<tr>' +
+                '<td><img src="http://localhost:8000/images/'+response[i].image+'" width="50" height="auto"></td>' + 
+                '<td><a href="">'+response[i].name+'</a></td>' +
+                '<td>'+response[i].gender+'</td>' +
+                '<td>'+response[i].breed+'</td>' + 
+                '</tr>'
+                // '<td>'+response[i].color+'</td>'
+            );
+          }
+        });
+        $('#example').DataTable();
       })
     </script>
 

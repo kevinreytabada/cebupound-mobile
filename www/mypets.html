@@ -95,10 +95,17 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class="active">
-          <a href="mypets.html">
-            <i class="fa fa-dashboard"></i> <span>Pet List</span>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-cubes"></i> <span>Pets</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
+          <ul class="treeview-menu" style="display: none;">
+            <li class="active"><a href="mypets.html"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a href="mypets-create.html"><i class="fa fa-circle-o"></i> Registration</a></li>
+          </ul>
         </li>
         <li class="active">
           <a href=index.html>
@@ -133,28 +140,12 @@
             <tr>
               <th>Image</th>
               <th>Name</th>
-              <th>Age</th>
               <th>Gender</th>
               <th>Breed</th>
-              <th>Color</th>
-              <th>Type</th>
-              <th>Action</th>
             </tr>
           </thead>
-          <tfoot>
-            <tr>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Gender</th>
-              <th>Breed</th>
-              <th>Color</th>
-              <th>Type</th>
-              <th>Action</th>
-            </tr>
-          </tfoot>
-          <tbody>
-            <tr class="pets-data">
+          <tbody class="pets-data">
+            
             <!--   <td><img src="" width="50" height="auto"></td>
               <td>sada<a href=""></a></td>
               <td>asd</td>
@@ -166,7 +157,6 @@
               <td><button class="btn btn-info btn-xs" disabled="true">Impounded</button><td>
               <td><button class="btn btn-danger btn-xs" disabled="true">Declined</button><td>
               <td><button class="btn btn-info btn-xs">Proceed to impound</button> -->
-            </tr>
           </tbody>
         </table>
       </div>
@@ -181,7 +171,11 @@
   </center></footer>
   <div class="control-sidebar-bg"></div>
 </div>
-
+    <style type="text/css">
+        td.dataTables_empty { 
+          display: none;
+        }
+    </style>
   
     <!-- jQuery 3 -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -238,13 +232,12 @@
         .done(function( response ) {
           for (var i = response.length - 1; i >= 0; i--) {
             $('.pets-data').append(
+                '<tr>' +
                 '<td><img src="http://localhost:8000/images/'+response[i].image+'" width="50" height="auto"></td>' + 
-                '<td><a href="">'+response[i].name+'</a></td>' +
-                '<td>'+response[i].age+'</td>' +
+                '<td><a href="mypets-details.html?id='+response[i].id+'">'+response[i].name+'</a></td>' +
                 '<td>'+response[i].gender+'</td>' +
-                '<td>'+response[i].breed+'</td>' +
-                '<td>'+response[i].color+'</td>' +
-                '<td>'+response[i].type.name+'</td>'
+                '<td>'+response[i].breed+'</td>' + 
+                '</tr>'
                 // '<td>'+response[i].color+'</td>'
             );
           }
