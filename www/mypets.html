@@ -253,7 +253,7 @@
 
         $.ajax({
             method: "GET",
-            url: "http://localhost:8000/mobile/mypets/" + localStorage.getItem('user_id'),
+            url: "http://cebupoundanimals.herokuapp.com/mobile/mypets/" + localStorage.getItem('user_id'),
             // data: { 
             //     username: $('#username').val(), 
             //     password: $('#password').val() 
@@ -263,7 +263,7 @@
           for (var i = response.length - 1; i >= 0; i--) {
             $('.pets-data').append(
                 '<tr>' +
-                '<td><img src="http://localhost:8000/images/'+response[i].image+'" width="50" height="auto"></td>' + 
+                '<td><img src="http://cebupoundanimals.herokuapp.com/images/'+response[i].image+'" width="50" height="auto"></td>' + 
                 '<td><a href="mypets-details.html?id='+response[i].id+'">'+response[i].name+'</a></td>' +
                 '<td>'+response[i].gender+'</td>' +
                 '<td>'+response[i].breed+'</td>' + 
@@ -285,7 +285,7 @@
           var service_id = $('#service_id').val();
           $.ajax({
               method: "POST",
-              url: "http://localhost:8000/mobile/mypets/service/create",
+              url: "http://cebupoundanimals.herokuapp.com/mobile/mypets/service/create",
               data: { 
                   pet_id: pet_id, 
                   service_id: service_id 
@@ -302,7 +302,7 @@
             e.preventDefault();
             $.ajax({
                 method: "POST",
-                url: "http://localhost:8000/mobile/login",
+                url: "http://cebupoundanimals.herokuapp.com/mobile/login",
                 data: { 
                     username: $('#username').val(), 
                     password: $('#password').val() 

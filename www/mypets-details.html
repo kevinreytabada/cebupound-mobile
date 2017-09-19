@@ -275,7 +275,7 @@
           var pet_type_id = $('#pet_type_id').val();
           $.ajax({
               method: "POST",
-              url: "http://localhost:8000/mobile/mypets/update/"+ getUrlParameter('id'),
+              url: "http://cebupoundanimals.herokuapp.com/mobile/mypets/update/"+ getUrlParameter('id'),
               data: { 
                 name: name, 
                 age: age,
@@ -299,7 +299,7 @@
 
         $.ajax({
             method: "GET",
-            url: "http://localhost:8000/mobile/mypets/details/" + getUrlParameter('id')
+            url: "http://cebupoundanimals.herokuapp.com/mobile/mypets/details/" + getUrlParameter('id')
         })
         .done(function( response ) {
           console.log(response);
