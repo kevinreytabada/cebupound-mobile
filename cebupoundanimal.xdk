@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "aaee19d7-31e1-4a6f-a5dc-cbc0e86775ca",
-      "lastModifiedDate": 1504797671150,
+      "lastModifiedDate": 1505568414653,
       "creationDate": 1504614555208
     },
     "sourceDirectory": "www",
@@ -49,7 +49,8 @@
         "topLevel": true,
         "checksum": "2373ccea",
         "gitref": "",
-        "description": "Cordova Device Plugin"
+        "description": "Cordova Device Plugin",
+        "cordovaVersion": ">=3.0.0"
       },
       {
         "id": "cordova-plugin-splashscreen",
@@ -66,7 +67,167 @@
         "topLevel": true,
         "checksum": "47137083",
         "gitref": "",
-        "description": "Cordova Splashscreen Plugin"
+        "description": "Cordova Splashscreen Plugin",
+        "cordovaVersion": ">=3.0.0"
+      },
+      {
+        "id": "cordova-plugin-ad-admob",
+        "name": "Cordova AdMob plugin",
+        "version": "1.0.118",
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-ad-admob",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-ad-admob",
+        "selectedState": "Included",
+        "checksum": "80abbca9",
+        "dependsOn": [
+          "cordova-plugin-extras-google-play-services",
+          "cordova-plugin-ad-admob-sdk"
+        ],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "author": "Sang Ki Kwon (Cranberrygame)",
+        "permissions": {},
+        "description": "Show admob banner, interstitial and rewarded video ad",
+        "data": {},
+        "dependedBy": [],
+        "custom": "true"
+      },
+      {
+        "id": "cordova-plugin-ad-admob-sdk",
+        "name": "Cordova Admob SDK",
+        "version": "1.0.36",
+        "originType": "repo",
+        "origin": "https://github.com/cranberrygame/cordova-plugin-ad-admob-sdk",
+        "gitref": "",
+        "subdir": ".",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-ad-admob-sdk",
+        "selectedState": "Included",
+        "checksum": "bd00acf9",
+        "dependsOn": [],
+        "topLevel": false,
+        "cordovaVersion": ">=3.0.0",
+        "author": "Sang Ki Kwon (Cranberrygame)",
+        "permissions": {
+          "android:name": [
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE",
+            "android.permission.ACCESS_COARSE_LOCATION"
+          ]
+        },
+        "description": "Cordova Admob SDK",
+        "data": {},
+        "dependedBy": [
+          "cordova-plugin-ad-admob"
+        ],
+        "custom": "true"
+      },
+      {
+        "id": "cordova-plugin-extras-google-play-services",
+        "name": "Google Play Services for Android",
+        "version": "1.0.5",
+        "originType": "repo",
+        "origin": "https://github.com/cranberrygame/cordova-plugin-extras-google-play-services",
+        "gitref": "",
+        "subdir": ".",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-extras-google-play-services",
+        "selectedState": "Included",
+        "checksum": "1c4715fe",
+        "dependsOn": [],
+        "topLevel": false,
+        "cordovaVersion": ">=3.0.0",
+        "permissions": {},
+        "data": {},
+        "dependedBy": [
+          "cordova-plugin-ad-admob"
+        ],
+        "custom": "true"
+      },
+      {
+        "id": "cordova-plugin-crosswalk-webview",
+        "name": "Crosswalk WebView Engine",
+        "version": "2.3.0",
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-crosswalk-webview",
+        "gitref": "",
+        "paramvals": {
+          "XWALK_VERSION": "23+",
+          "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
+          "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
+          "XWALK_MODE": "embedded",
+          "XWALK_MULTIPLEAPK": "true"
+        },
+        "sourceLocation": "plugins/cordova-plugin-crosswalk-webview",
+        "selectedState": "Included",
+        "checksum": "fae157ca",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "permissions": {
+          "android:name": [
+            "android.permission.ACCESS_NETWORK_STATE",
+            "android.permission.ACCESS_WIFI_STATE"
+          ]
+        },
+        "description": "Changes the default WebView to CrossWalk",
+        "data": {},
+        "dependedBy": [],
+        "custom": "true"
+      },
+      {
+        "id": "cordova-plugin-dialogs",
+        "name": "Notification",
+        "version": "1.2.1",
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-dialogs",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-dialogs",
+        "selectedState": "Included",
+        "checksum": "2948bc11",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "permissions": {},
+        "description": "Cordova Notification Plugin",
+        "data": {},
+        "dependedBy": []
+      },
+      {
+        "id": "com.phonegap.plugins.PushPlugin",
+        "name": "PushPlugin",
+        "version": "2.5.0",
+        "originType": "repo",
+        "origin": "https://github.com/phonegap-build/PushPlugin.git",
+        "gitref": "",
+        "subdir": ".",
+        "paramvals": {},
+        "sourceLocation": "plugins/com.phonegap.plugins.PushPlugin",
+        "selectedState": "Included",
+        "checksum": "75197821",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "author": "Bob Easterday",
+        "permissions": {
+          "android:name": [
+            "android.permission.ACCESS_NETWORK_STATE",
+            "android.permission.GET_ACCOUNTS",
+            "android.permission.WAKE_LOCK",
+            "android.permission.VIBRATE",
+            "com.google.android.c2dm.permission.RECEIVE",
+            "$PACKAGE_NAME.permission.C2D_MESSAGE",
+            "$PACKAGE_NAME.permission.RECEIVE_ADM_MESSAGE",
+            "com.amazon.device.messaging.permission.RECEIVE"
+          ]
+        },
+        "description": "\r\n\t\tThis plugin allows your application to receive push notifications on Android, iOS, WP8 and Windows8 devices.\r\n    Android uses Google Cloud Messaging.\r\n    iOS uses Apple APNS Notifications.\r\n    WP8 uses Microsoft MPNS Notifications.\r\n    Windows8 uses Microsoft WNS Notifications.\r\n\t",
+        "data": {},
+        "dependedBy": [],
+        "custom": "true"
       }
     ],
     "buildConfigurations": {
@@ -80,7 +241,7 @@
           "android-installLocation": "auto",
           "Fullscreen": true,
           "Orientation": "portrait",
-          "android-signed": true
+          "android-signed": false
         },
         "isActive_": true,
         "certificateId_": "",
@@ -166,19 +327,11 @@
         "appName_": "cebupoundanimal",
         "appID_": "xdk.intel.template",
         "appAccess_": {
-          "mode": "whitelist",
-          "network": [
-            "*"
-          ],
-          "intents": [
-            "http://*/*",
-            "https://*/*",
-            "tel:*",
-            "sms:*",
-            "mailto:*",
-            "geo:*"
-          ],
-          "navigation": []
+          "mode": "block",
+          "network": [],
+          "intents": [],
+          "navigation": [],
+          "properties": {}
         },
         "icons_": [],
         "splashes_": [],
