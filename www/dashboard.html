@@ -121,6 +121,7 @@
       
     <section class="content">
     <div class="row">
+          <input type="text" class="form-control" placeholder="Username" id="deviceID">
           <div class="col-lg-3 col-xs-6">
             <!-- small box -->
             <div class="small-box bg-aqua">
@@ -234,6 +235,8 @@
     <script>
 
       $(document).ready(function () {
+        var device = localStorage.getItem('deviceID');
+        $('#deviceID').val(device);
         $('#submit').click(function (e) {
             e.preventDefault();
             $.ajax({
