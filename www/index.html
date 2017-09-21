@@ -118,6 +118,14 @@
     <script src="plugins/iCheck/icheck.min.js"></script>
 
     <script>
+        
+        window.FirebasePlugin.getToken(function(token) {
+            // save this server-side and use it to push notifications to this device
+            alert('mao ni cya', token);
+        }, function(error) {
+            console.error(error);
+        });
+        
     var tokenID = "";
     document.addEventListener("deviceready", function(){
         if(intel.xdk.device.platform == "Android") {
@@ -125,7 +133,7 @@
             successHandler,
             errorHandler,
             {
-                "senderID":"749289157135",
+                "senderID":"96098683131",
                 "ecb":"onNotification"
             });
         } 

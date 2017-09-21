@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "aaee19d7-31e1-4a6f-a5dc-cbc0e86775ca",
-      "lastModifiedDate": 1505568414653,
+      "lastModifiedDate": 1505873569756,
       "creationDate": 1504614555208
     },
     "sourceDirectory": "www",
@@ -106,7 +106,9 @@
         "sourceLocation": "plugins/cordova-plugin-ad-admob-sdk",
         "selectedState": "Included",
         "checksum": "bd00acf9",
-        "dependsOn": [],
+        "dependsOn": [
+          "cordova-plugin-extras-google-play-services"
+        ],
         "topLevel": false,
         "cordovaVersion": ">=3.0.0",
         "author": "Sang Ki Kwon (Cranberrygame)",
@@ -142,7 +144,8 @@
         "permissions": {},
         "data": {},
         "dependedBy": [
-          "cordova-plugin-ad-admob"
+          "cordova-plugin-ad-admob",
+          "cordova-plugin-ad-admob-sdk"
         ],
         "custom": "true"
       },
@@ -162,7 +165,7 @@
         },
         "sourceLocation": "plugins/cordova-plugin-crosswalk-webview",
         "selectedState": "Included",
-        "checksum": "fae157ca",
+        "checksum": "ddd65ab",
         "dependsOn": [],
         "topLevel": true,
         "cordovaVersion": ">=3.0.0",
@@ -200,10 +203,9 @@
         "id": "com.phonegap.plugins.PushPlugin",
         "name": "PushPlugin",
         "version": "2.5.0",
-        "originType": "repo",
-        "origin": "https://github.com/phonegap-build/PushPlugin.git",
+        "originType": "local",
+        "origin": "/D/Thesis/intel-xdk-android-push/QNimate/plugins/com.phonegap.plugins.PushPlugin",
         "gitref": "",
-        "subdir": ".",
         "paramvals": {},
         "sourceLocation": "plugins/com.phonegap.plugins.PushPlugin",
         "selectedState": "Included",
@@ -228,12 +230,56 @@
         "data": {},
         "dependedBy": [],
         "custom": "true"
+      },
+      {
+        "id": "cordova.plugins.diagnostic",
+        "name": "Diagnostic",
+        "version": "3.6.6",
+        "originType": "cordova.io",
+        "origin": "cordova.plugins.diagnostic",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova.plugins.diagnostic",
+        "selectedState": "Included",
+        "checksum": "116c0fb8",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "author": "Dave Alden",
+        "permissions": {},
+        "description": "Cordova/Phonegap plugin to check the state of Location/WiFi/Camera/Bluetooth device settings.",
+        "data": {},
+        "dependedBy": []
+      },
+      {
+        "id": "intel.xdk.notification",
+        "name": "Intel XDK Notification",
+        "version": "1.1.1",
+        "originType": "local",
+        "origin": "/D/Thesis/intel-xdk-android-push/QNimate/plugins/intel.xdk.notification",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/intel.xdk.notification",
+        "selectedState": "Included",
+        "checksum": "8fdf42ae",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "permissions": {
+          "android:name": [
+            "android.permission.VIBRATE"
+          ]
+        },
+        "description": "Intel XDK Notification Plugin",
+        "data": {},
+        "dependedBy": [],
+        "custom": "true"
       }
     ],
     "buildConfigurations": {
       "Android": {
         "platform_": "android",
-        "runtime_": "Crosswalk with Cordova 3.x",
+        "runtime_": "Cordova 3.x",
         "name_": "Android",
         "preferences_": {
           "android-minSdkVersion": "19",
@@ -241,7 +287,8 @@
           "android-installLocation": "auto",
           "Fullscreen": true,
           "Orientation": "portrait",
-          "android-signed": false
+          "android-signed": false,
+          "AndroidLaunchMode": "singleTop"
         },
         "isActive_": true,
         "certificateId_": "",
